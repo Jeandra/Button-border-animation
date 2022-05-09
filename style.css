@@ -1,0 +1,43 @@
+.container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    background-color: #f6fe2f;
+}
+
+.button {
+    text-decoration: none;
+    font-family: fantasy;
+    font-size: 25x;
+    padding: 10px;
+    color: #9230ff;
+    border: 2px solid #9230ff;
+    position: relative;
+}
+
+.button::before, .button::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: inherit;
+    transition: all .5s;
+}
+
+.button::before { 
+    top: -15px;  /* definindo a distancia entre a borda animada e o botão */
+    left: -15px;
+    border-width: 2px 0 0 2px; /* definindo a espessura da borda animada*/
+}
+
+.button::after {
+    bottom: -15px;
+    right: -15px;
+    border-width: 0 2px 2px 0;
+}
+
+.button:hover::before, .button:hover::after{
+    width: calc(100% + 27px); /* definindo o tamanho da borda animada*/
+    height: calc(100% + 27px);
+}
